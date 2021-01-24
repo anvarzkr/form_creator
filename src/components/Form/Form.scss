@@ -1,0 +1,54 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
+
+  .FormRow {
+    display: flex;
+
+    .FormRow__label {
+      display: flex;
+      align-items: center;
+
+      height: 45px;
+
+      &.FormRow__label--required span {
+        &::after {
+          content: "*";
+          color: #f77148;
+        }
+      }
+    }
+
+    .FormRow__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      flex: 1;
+
+      .FormRow__error {
+        font-size: 12px;
+        margin-top: 10px;
+        color: #ef4136;
+      }
+
+      .FormRow__description {
+        font-size: 12px;
+        margin-top: 10px;
+        color: #a9a9a9;
+      }
+
+      .Checkbox {
+        height: 45px;
+      }
+
+      .CheckboxGroup .Checkbox {
+        height: unset;
+        margin-top: 13px;
+      }
+    }
+  }
+}

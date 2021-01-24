@@ -1,0 +1,12 @@
+.PhotoInput {
+  .PhotoInput__preview {
+    width: 150px;
+    height: 150px;
+
+    transition: 0.2s;
+  }
+
+  .PhotoInput__rotate-button {
+    margin-top: 5px;
+  }
+}

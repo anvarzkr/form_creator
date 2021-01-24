@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  color: #515151;
+}
+
+html,
+body,
+#root {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  max-width: 100%;
+  width: 800px;
+
+  padding: 50px 10px;
+}
+
+// Hide input[type=number] arrows
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Hide input[type=number] arrows
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

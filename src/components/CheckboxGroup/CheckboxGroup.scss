@@ -1,0 +1,16 @@
+.CheckboxGroup {
+  display: flex;
+
+  gap: 20px;
+
+  .CheckboxGroup__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .CheckboxGroup__check-all-checkbox {
+    .Checkbox__label {
+      font-weight: 600;
+    }
+  }
+}

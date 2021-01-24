@@ -1,0 +1,41 @@
+.Button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 55px;
+  border-radius: 4px;
+  padding: 0 40px;
+
+  background-color: #ffe783;
+  border: 0;
+  box-shadow: 0 1px 0 0px #cfbb6b;
+
+  transition: 0.2s;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: #ffeb99;
+    color: #78735e;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: #ffe371;
+    color: inherit;
+  }
+
+  &:disabled {
+    background-color: #ffe783;
+    color: rgb(158, 147, 104);
+  }
+}
+
+.Button.Button--size-small {
+  height: 35px;
+  padding: 0 20px;
+}

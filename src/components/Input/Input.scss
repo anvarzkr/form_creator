@@ -1,0 +1,115 @@
+.InputWrapper {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+}
+
+.Input {
+  height: 45px;
+  width: 100%;
+
+  padding: 0 15px;
+
+  background-color: #fff;
+  color: #515151;
+
+  border-radius: 4px;
+  border: 1px solid #d5d6d5;
+
+  transition: 0.2s;
+
+  &:focus {
+    border-color: #9b9b9b;
+  }
+
+  &::placeholder {
+    color: #a9a9a9;
+  }
+}
+
+.InputWrapper .InputNumberSwitcher {
+  display: flex;
+  flex-direction: column;
+
+  width: 30px;
+
+  margin-left: 5px;
+
+  .InputNumberSwitcher__button {
+    flex: 1;
+
+    background-color: rgb(240, 240, 240);
+    border: 0;
+
+    transition: 0.2s;
+
+    &:hover:not(:disabled) {
+      background-color: #ffdd55;
+      cursor: pointer;
+    }
+
+    &:active:not(:disabled) {
+      background-color: #d1b333;
+    }
+
+    &.InputNumberSwitcher__button--decrement,
+    &.InputNumberSwitcher__button--increment {
+      &:disabled {
+        &::after {
+          border-top-color: rgb(195, 195, 195);
+          border-bottom-color: rgb(195, 195, 195);
+        }
+      }
+    }
+
+    &.InputNumberSwitcher__button--decrement {
+      border-radius: 0 0 4px 4px;
+
+      &:after {
+        content: "";
+        position: relative;
+        top: calc(50% + 3px);
+        left: 1px;
+
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+
+        border-top: 7px solid #808080;
+      }
+    }
+
+    &.InputNumberSwitcher__button--increment {
+      border-radius: 4px 4px 0 0;
+
+      &:after {
+        content: "";
+        position: relative;
+        bottom: calc(50% + 3px);
+        left: 1px;
+
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+
+        border-bottom: 7px solid #808080;
+      }
+    }
+  }
+
+  .InputNumberSwitcher__divider {
+    height: 1px;
+    background-color: rgb(204, 204, 204);
+  }
+}
+
+.InputWrapper--type-number {
+  width: unset;
+
+  .Input {
+    width: unset;
+  }
+}
