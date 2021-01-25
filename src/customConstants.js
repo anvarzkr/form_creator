@@ -91,6 +91,8 @@ export const EXAMPLE_FORM_CONFIG = [
     type: "checkbox_group",
     label: "Языки",
     description: "Выберите языки, которыми вы владеете",
+    // Uncomment to make checkbox group required
+    // Required means that at least one checkbox must be checked
     // required: true,
     componentProps: {
       options: [

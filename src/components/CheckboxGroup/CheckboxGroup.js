@@ -41,25 +41,29 @@ const CheckboxGroup = ({
     );
   };
 
-  const optionsToRender = options.map((option) => (
-    <Checkbox
-      key={option.value}
-      value={value && value.includes(option.value)}
-      onChange={() => handleChange(option.value)}
-      label={option.label}
-      name={name}
-    />
-  ));
-  optionsToRender.push(
-    <Checkbox
-      key={"_check_all"}
-      value={isEverythingChecked}
-      onChange={toggleCheckAll}
-      label="Выделить все"
-      name={name}
-      className="CheckboxGroup__check-all-checkbox"
-    />
-  );
+  const optionsToRender = useMemo(() => {
+    const _optionsToRender = options.map((option) => (
+      <Checkbox
+        key={option.value}
+        value={value && value.includes(option.value)}
+        onChange={() => handleChange(option.value)}
+        label={option.label}
+        name={name}
+      />
+    ));
+    _optionsToRender.push(
+      <Checkbox
+        key={"_check_all"}
+        value={isEverythingChecked}
+        onChange={toggleCheckAll}
+        label="Выделить все"
+        name={name}
+        className="CheckboxGroup__check-all-checkbox"
+      />
+    );
+
+    return _optionsToRender;
+  }, [options, value, name, isEverythingChecked, toggleCheckAll]);
 
   // Split checkboxes into columns
   const columnsToRender = useMemo(() => {
@@ -80,12 +84,7 @@ const CheckboxGroup = ({
     ));
   }, [optionsToRender, columnsCount]);
 
-  return (
-    <div className="CheckboxGroup">
-      {/* {optionsToRender} */}
-      {columnsToRender}
-    </div>
-  );
+  return <div className="CheckboxGroup">{columnsToRender}</div>;
 };
 
 export default CheckboxGroup;
